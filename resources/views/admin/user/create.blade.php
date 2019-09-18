@@ -22,14 +22,15 @@
                     <label for="nama">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                 </div>
-              {{-- <div class="form-group">
+                
+              <div class="form-group">
                   <label for="">Nama Role</label>
                   <select name="role" class="form-control">
                       @foreach($role as $data)
                           <option value="{{ $data->id }}">{{ $data->name }}</option>
                       @endforeach
                   </select>
-              </div> --}}
+              </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

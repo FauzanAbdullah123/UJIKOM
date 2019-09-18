@@ -45,8 +45,8 @@
                                 data-siswa="{{ $data->siswa->siswa_nama }}"
                                 data-guru="{{ $data->guru->guru_nama }}"
                                 data-sk="{{ $data->standarkompetensi->SK_nama }}"
-                                data-nilaiA="{{ $data->nilai_angka }}"
-                                data-nilaiB="{{ $data->nilai_huruf }}">Edit</button>
+                                data-nilaiangka="{{ $data->nilai_angka }}"
+                                data-nilaihuruf="{{ $data->nilai_huruf }}">Edit</button>
                                 </center>
                             </td>
                             <td>
@@ -73,16 +73,16 @@
         var siswa = button.data('siswa')
         var guru = button.data('guru')
         var sk = button.data('sk')
-        var nilaiA = button.data('nilaiA')
-        var nilaiB = button.data('nilaiB')
+        var nilaiangka = button.data('nilaiangka')
+        var nilaihuruf = button.data('nilaihuruf')
         var modal = $(this)
     
         modal.find('input[name="id"]').val(id)
         modal.find('input[name="siswa_id"]').val(siswa)
         modal.find('input[name="guru_id"]').val(guru)
         modal.find('input[name="SK_id"]').val(sk)
-        modal.find('input[name="nilai_angka"]').val(nilaiA)
-        modal.find('input[name="nilai_huruf"]').val(nilaiB)
+        modal.find('input[name="nilai_angka"]').val(nilaiangka)
+        modal.find('input[name="nilai_huruf"]').val(nilaihuruf)
     })  
         </script>
 @endsection

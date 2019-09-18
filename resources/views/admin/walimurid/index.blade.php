@@ -47,10 +47,10 @@
                             <td><center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit" 
                                 data-id="{{ $data->id }}" 
                                 data-siswa="{{ $data->siswa->siswa_nama }}"
-                                data-namaA="{{ $data->wali_nama_ayah }}"
-                                data-kerjaA="{{ $data->wali_pekerjaan_ayah }}"
-                                data-namaB="{{ $data->wali_nama_ibu }}"
-                                data-kerjaB="{{ $data->wali_pekerjaan_ibu }}"
+                                data-namaayah="{{ $data->wali_nama_ayah }}"
+                                data-kerjaayah="{{ $data->wali_pekerjaan_ayah }}"
+                                data-namaibu="{{ $data->wali_nama_ibu }}"
+                                data-kerjaibu="{{ $data->wali_pekerjaan_ibu }}"
                                 data-alamat="{{ $data->wali_alamat }}"
                                 data-telepon="{{ $data->wali_telepon }}">Edit</button>
                                 </center>
@@ -77,20 +77,20 @@
         var button = $(event.relatedTarget) // Button that triggered the modal
         var id = button.data('id')
         var siswa = button.data('siswa')
-        var namaA = button.data('namaA')
-        var kerjaA = button.data('kerjaA')
-        var namaB = button.data('namaB')
-        var kerjaB = button.data('kerjaB')
+        var namaayah = button.data('namaayah')
+        var kerjaayah = button.data('kerjaayah')
+        var namaibu = button.data('namaibu')
+        var kerjaibu = button.data('kerjaibu')
         var alamat = button.data('alamat')
         var telepon = button.data('telepon')
         var modal = $(this)
     
         modal.find('input[name="id"]').val(id)
         modal.find('input[name="siswa_id"]').val(siswa)
-        modal.find('input[name="wali_nama_ayah"]').val(namaA)
-        modal.find('input[name="wali_pekerjaan_ayah"]').val(kerjaA)
-        modal.find('input[name="wali_nama_ibu"]').val(namaB)
-        modal.find('input[name="wali_pekerjaan_ibu"]').val(kerjaB)
+        modal.find('input[name="wali_nama_ayah"]').val(namaayah)
+        modal.find('input[name="wali_pekerjaan_ayah"]').val(kerjaayah)
+        modal.find('input[name="wali_nama_ibu"]').val(namaibu)
+        modal.find('input[name="wali_pekerjaan_ibu"]').val(kerjaibu)
         modal.find('input[name="wali_alamat"]').val(alamat)
         modal.find('input[name="wali_telepon"]').val(telepon)
 

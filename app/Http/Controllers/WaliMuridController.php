@@ -97,7 +97,7 @@ class WaliMuridController extends Controller
         $walimurid->wali_pekerjaan_ibu = $request->wali_pekerjaan_ibu;
         $walimurid->wali_alamat = $request->wali_alamat;
         $walimurid->wali_telepon = $request->wali_telepon;
-        $standarkomp->save();
+        $walimurid->save();
         Session::flash("flash_notification", [
             "level" => "success",
             "message" => "Berhasil Mengedit <b>$walimurid->wali_nama_ayah</b>"

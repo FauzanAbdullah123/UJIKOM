@@ -54,8 +54,7 @@
                                 data-komp="{{ $data->kompetensikeahlian->kompetensi_nama }}"
                                 data-nama="{{ $data->siswa_nama }}"
                                 data-alamat="{{ $data->siswa_alamat }}"
-                                data-tgl="{{ $data->siswa_tgl_lahir }}"
-                                data-foto="{{ $data->foto }}">Edit</button>
+                                data-tgl="{{ $data->siswa_tgl_lahir }}">Edit</button>
                                 </center>
                             </td>
                             <td>
@@ -84,7 +83,7 @@
         var nama = button.data('nama')
         var alamat = button.data('alamat')
         var tgl = button.data('tgl')
-        var foto = button.data('foto')
+        // var foto = button.data('foto')
         var modal = $(this)
     
         modal.find('input[name="id"]').val(id)
@@ -93,7 +92,7 @@
         modal.find('input[name="siswa_nama"]').val(nama)
         modal.find('input[name="siswa_alamat"]').val(alamat)
         modal.find('input[name="siswa_tgl_lahir"]').val(tgl)
-        modal.find('input[name="foto"]').val(foto)
+        // modal.find('input[name="foto"]').val(foto)
     })  
         </script>
 @endsection

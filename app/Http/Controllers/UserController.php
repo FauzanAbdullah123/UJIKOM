@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Role;
 use Session;
 
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class UserController extends Controller
     public function index()
     {
         $user = User::all();
-        return view('admin.user.index', compact('user'));
+        $role = Role::all();
+        return view('admin.user.index', compact('user', 'role'));
     }
 
     /**
@@ -27,7 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        $role = Role::all();
+        return view('admin.user.create', compact('role'));
     }
 
     /**
@@ -44,11 +47,8 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
-
-        $namaRole = 'admin'; //Disini dideskripsikan nama rolenya yang akan dipilih
-        $role = Role::where('name', $namaRole)->first();
         
-        $user->attachRole($role);
+        $user->attachRole($request->role);
         Session::flash("flash_notification", [
             "level" => "success",
             "message" => "Berhasil Menyimpan <b>$user->name</b>"
@@ -112,11 +112,11 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $user->delete();
-        $user->detachRole($role);
+        $user->detachRole($request->role);
         Session::flash("flash_notification", [
             "level" => "success",
             "message" => "Berhasil menghapus data"

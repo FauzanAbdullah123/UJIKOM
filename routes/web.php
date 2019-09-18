@@ -31,3 +31,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('standarkompetensi', 'StandarKompetensiController');
     Route::resource('nilai', 'NilaiController');
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:guru']], function () {
+    Route::get('/', function () {
+        return view('home');
+    });
+    Route::resource('nilai', 'NilaiController');
+});

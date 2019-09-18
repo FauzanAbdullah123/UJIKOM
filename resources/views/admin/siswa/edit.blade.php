@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="nama">Alamat Siswa</label>
-                    <textarea name="siswa_nama" id="siswa_nama" cols="30" rows="10" class="form-control" placeholder="Alamat Siswa" required></textarea>
+                    <textarea name="siswa_alamat" id="siswa_alamat" cols="30" rows="10" class="form-control" placeholder="Alamat Siswa" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="nama">Tanggal Lahir Siswa</label>

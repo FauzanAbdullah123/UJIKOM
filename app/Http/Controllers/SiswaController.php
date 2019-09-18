@@ -117,18 +117,18 @@ class SiswaController extends Controller
                 $filename
             );
             // hapus foto lama, jika ada
-            if ($siswa->siswa_foto){
-                $old_foto = $siswa->siswa_foto;
+            if ($siswa->foto){
+                $old_foto = $siswa->foto;
                 $filepath = public_path()
-                .'/assets/img/siswa'
-                .$siswa->siswa_foto;    
+                .'/assets/img/siswa/'
+                .$siswa->foto;    
                 try {
                     File::delete($filepath);
                 } catch (FileNotFoundException $e) {
                     // File sudah dihapus/tidak ada
                 }
             }
-            $siswa->siswa_foto = $filename;
+            $siswa->foto = $filename;
         }
         $siswa->save();
         Session::flash("flash_notification", [
